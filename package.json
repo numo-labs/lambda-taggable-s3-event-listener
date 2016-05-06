@@ -1,6 +1,6 @@
 {
   "name": "lambda-taggable-s3-event-listener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Listens for the create event in s3 bucket and triggers the indexer lambdas",
   "main": "index.js",
   "scripts": {

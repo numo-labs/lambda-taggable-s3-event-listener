@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
   console.log(JSON.stringify(event.Records[0].s3, null, 2));
   var lambdas_to_trigger = [
     'lambda-taggable-cloudsearch-indexer-v1',
-    'numo-tag-e-v1'
+    'lambda-taggable-s3-event-listener-v1'
   ];
   var countdown = lambdas_to_trigger.length;
   lambdas_to_trigger.forEach(function (name) {
