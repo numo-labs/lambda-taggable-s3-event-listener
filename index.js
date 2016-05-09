@@ -1,8 +1,15 @@
+
 var invoke_lambda = require('./lib/invoke_lambda.js');
 var AwsHelper = require('aws-lambda-helper');
 
+const AWS = require('aws-sdk');
+const myCredentials = new AWS.EnvironmentCredentials('AWS'); // Lambda provided credentials
+console.log(myCredentials);
+// return;
+
 var lambdas_to_trigger = [ // this *could* be an environment variable ...
-  'lambda-taggable-cloudsearch-indexer-v1',
+  // 'lambda-taggable-cloudsearch-indexer-v1',
+  'lambda-taggable-elasticsearch-indexer-v1',
   'lambda-taggable-neo4j-indexer-v1'
 ];
 
@@ -28,4 +35,3 @@ exports.handler = function (event, context, callback) {
     });
   });
 };
-
