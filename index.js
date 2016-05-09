@@ -3,6 +3,7 @@ var AwsHelper = require('aws-lambda-helper');
 
 var lambdas_to_trigger = [ // this *could* be an environment variable ...
   'lambda-taggable-cloudsearch-indexer-v1',
+  'lambda-taggable-elasticsearch-indexer-v1',
   'lambda-taggable-neo4j-indexer-v1'
 ];
 
@@ -28,4 +29,3 @@ exports.handler = function (event, context, callback) {
     });
   });
 };
-

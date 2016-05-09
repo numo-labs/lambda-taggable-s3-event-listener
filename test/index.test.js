@@ -33,7 +33,7 @@ describe('Index handler tests', function () {
     function test (err, result) { // here's your test:
       assert(!err);
       console.log(result);
-      assert(result.length === 6);
+      assert(result.length === 9);
       done();
     }
     index.handler(multiple_records_event, CONTEXT, test);
