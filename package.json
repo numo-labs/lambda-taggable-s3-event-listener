@@ -1,6 +1,6 @@
 {
   "name": "lambda-taggable-s3-event-listener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Listens for the create event in s3 bucket and triggers the indexer lambdas",
   "main": "index.js",
   "scripts": {
@@ -19,14 +19,14 @@
   },
   "devDependencies": {
     "aws-lambda-test-utils": "^1.0.2",
-    "aws-sdk": "^2.3.6",
+    "aws-sdk": "^2.3.9",
     "aws-sdk-mock": "^1.0.10",
     "dpl": "^3.0.1",
-    "istanbul": "^0.4.2",
+    "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "pre-commit": "^1.1.2",
     "semistandard": "^7.0.5",
-    "snazzy": "^3.0.0"
+    "snazzy": "^4.0.0"
   },
   "files_to_deploy": [
     "package.json",
