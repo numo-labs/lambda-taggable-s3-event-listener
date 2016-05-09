@@ -1,6 +1,6 @@
 var assert = require('assert');
 var invoke = require('../lib/invoke_lambda');
-var event = require('./sample_event');
+var event = require('./fixtures/sample_event');
 
 describe('invoke a lambda function', function () {
   it('invokes the lambda with sample event', function (done) {

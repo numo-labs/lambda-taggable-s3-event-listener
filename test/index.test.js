@@ -1,6 +1,7 @@
 var assert = require('assert');
 var index = require('../index');
-var event = require('./sample_event');
+var event = require('./fixtures/sample_event');
+var multiple_records_event = require('./fixtures/multiple_records_event');
 
 var CONTEXT = {
   fail: function (err) {
@@ -21,10 +22,20 @@ describe('Index handler tests', function () {
   it('Successfully invoked both lambdas', function (done) {
     function test (err, result) { // here's your test:
       assert(!err);
-      var res = JSON.parse(result.Payload);
+      var res = JSON.parse(result[0].Payload);
       assert(res);
       done();
     }
     index.handler(event, CONTEXT, test);
+  });
+
+  it('Handles an event with multiple records', function (done) {
+    function test (err, result) { // here's your test:
+      assert(!err);
+      console.log(result);
+      assert(result.length === 6);
+      done();
+    }
+    index.handler(multiple_records_event, CONTEXT, test);
   });
 });
